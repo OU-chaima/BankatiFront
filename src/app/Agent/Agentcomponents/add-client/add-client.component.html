@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ouverture d'un compte de paiement</title>
+
+  <style>
+    .form-control {
+      border-radius: 20px;
+      background-color: #F8F8F8;
+    }
+
+    .form-group label {
+      color: #2f3a8a;
+    }
+
+    .btn {
+      background-color: #ffc107;
+      color: #fff;
+      border-radius: 20px;
+    }
+
+    .card-title {
+      color: #ffc107;
+    }
+
+    .header {
+      background: linear-gradient(to right, #ffc107, #2c4481);
+    }
+
+    .Montserrat {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      color: #2f3a8a;
+      margin-bottom: 10px;
+    }
+
+    .section-divider {
+      border-top: 2px solid #2f3a8a;
+      margin-top: -10px;
+      margin-bottom: 20px;
+    }
+
+    .info-divider {
+      border-top: 1px solid #ddd;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<div class="header pb-8 pt-5 pt-md-8"></div>
+
+<div class="container-fluid mt--7">
+  <!-- Dark table -->
+  <div class="row mt-2">
+    <div class="col">
+      <div class="table-responsive">
+        <!-- Loading spinner -->
+        <div class="loader-container">
+          <div class="spinner-border text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+
+        <div class="container-fluid">
+          <div class="card border-0 shadow px-1 custom-card">
+            <form  >
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                  <h2 class="card-title text-right Montserrat">Ouverture d'un compte de paiement</h2>
+                  <div type="button" [routerLink]="['/client']">
+                    <i class="fas fa-sign-out-alt"></i>
+                  </div>
+                </div>
+                <hr style="color:#6415FF" />
+                <div class="card-text py-2">
+                  <div class="form-group">
+                    <label for="typeHissab" class="Montserrat">Sélectionner le type de compte</label>
+                    <select class="form-control" id="typeHissab" name="typeHissab" [(ngModel)]="client.typeHissab">
+                      <option value="hssab1">Hssab 1 - Plafond : 200 DH</option>
+                      <option value="hssab2">Hssab 2 - Plafond : 5000 DH</option>
+                      <option value="hssab3">Hssab 3 - Plafond : 20000 DH</option>
+                    </select>
+                  </div>
+
+                  <!-- New section for Personal Information -->
+                  <h2 class="section-title Montserrat">Informations personnelles</h2>
+                  <div class="section-divider"></div>
+                  <div class="form-section">
+                    <div class="row">
+                      <!-- First Name and Last Name on the same line -->
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="firstName">Prénom</label>
+                          <input type="text" class="form-control" id="firstName" [(ngModel)]="client.firstName" name="firstName">
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="lastName">Nom</label>
+                          <input type="text" class="form-control" id="lastName" [(ngModel)]="client.lastName" name="lastName">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <!-- Email and Address on the same line -->
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="email">Email</label>
+                          <input type="email" class="form-control" id="email" [(ngModel)]="client.email" name="email">
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="address">Adresse</label>
+                          <input type="text" class="form-control" id="address" [(ngModel)]="client.address" name="address">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <!-- CIN and Birth Date on the same line -->
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="cin">CIN</label>
+                          <input type="text" class="form-control" id="cin" [(ngModel)]="client.cin" name="cin">
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="birthDate">Date de naissance</label>
+                          <input type="date" class="form-control" id="birthDate" [(ngModel)]="client.birthDate" name="birthDate">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <!-- Phone Number and Commercial Number on the same line -->
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="phoneNumber">Numéro de téléphone</label>
+                          <input type="text" class="form-control" id="phoneNumber" [(ngModel)]="client.phoneNumber" name="phoneNumber">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="phoneNumber">Currency</label>
+                          <select class="form-control" id="currency" [(ngModel)]="client.currency" name="currency">
+                            <option value="DH">DH - Dirhams Marocains</option>
+                            <option value="USD">USD - Dollars Américains</option>
+                            <option value="EUR">EUR - Euros</option>
+                          </select>
+                        </div>
+                      </div>
+                      <!--div class="col-md-6">
+                        <div class="form-group">
+                          <label for="commercialRn">Numéro commercial</label>
+                          <input type="text" class="form-control" id="commercialRn" [(ngModel)]="client.commercialRn" name="commercialRn">
+                        </div>
+                      </div-->
+                    </div>
+
+                    <div class="row">
+                      <!-- Patent Number and Payment Account Checkbox on the same line -->
+                      <!--div class="col-md-6">
+                        <div class="form-group">
+                          <label for="patentNumber">Numéro de patente</label>
+                          <input type="text" class="form-control" id="patentNumber" [(ngModel)]="client.patentNumber" name="patentNumber">
+                        </div>
+                      </div-->
+
+                      <!--div class="col-md-6">
+                        <div class="form-group">
+                          <label for="isPaymentAccountActivated">Compte activé</label>
+                          <input type="checkbox" id="isPaymentAccountActivated" [(ngModel)]="client.isPaymentAccountActivated" name="isPaymentAccountActivated">
+                        </div>
+                      </div-->
+
+                      <!--div class="col-md-6">
+                        <div class="form-group">
+                          <select class="form-control" id="currency" [(ngModel)]="client.currency" name="currency">
+                            <option value="DH">DH - Dirhams Marocains</option>
+                            <option value="USD">USD - Dollars Américains</option>
+                            <option value="EUR">EUR - Euros</option>
+                          </select>
+                        </div>
+                      </div-->
+
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" (click)="addClient()">Sauvegarder</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</html>
