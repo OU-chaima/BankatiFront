@@ -22,7 +22,7 @@ import {IAgentServiceResponse} from "../models/IAgentServiceResponse";
 })
 export class AgentService {
 
-  private serverUrl = `http://localhost:8222/api/v1/users`;
+  private serverUrl = `https://gateway-tyir.onrender.com/api/v1/users`;
   private authorization = this.cookieService.get('Authorization');
 
 

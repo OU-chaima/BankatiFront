@@ -7,7 +7,7 @@ import { SharedInfosService } from './shared-infos.service';
   providedIn: 'root'
 })
 export class ClientChangePasswordService {
-  private apiUrl = 'http://localhost:8222/api/v1/users/change-password';
+  private apiUrl = 'https://gateway-tyir.onrender.com/api/v1/users/change-password';
 
   constructor(
     private httpClient: HttpClient,

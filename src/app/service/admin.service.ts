@@ -15,7 +15,7 @@ import { HttpHeaders } from "@angular/common/http";
   providedIn: 'root',
 })
 export class AdminService {
-  private serverUrl = 'http://localhost:8222/api/v1/users';
+  private serverUrl = 'https://gateway-tyir.onrender.com/api/v1/users';
 
     constructor(private httpClient: HttpClient, private cookieService: CookieService,private sharedInfosService: SharedInfosService) { }
 

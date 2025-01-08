@@ -19,7 +19,7 @@ import {SharedInfosService} from "../../service/shared-infos.service";
 
 export class PaymentService {
 
-  private serverUrl: string =  `http://localhost:8222/api/v1/users`;
+  private serverUrl: string =  `https://gateway-tyir.onrender.com/api/v1/users`;
 
   constructor(private httpClient: HttpClient, private cookieService: CookieService,private sharedInfosService:SharedInfosService) { }
 

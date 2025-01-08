@@ -7,12 +7,12 @@ import { TransactionCrypto } from '../models/crypto/transaction-crypto';
 import { CookieService } from 'ngx-cookie-service';
 import { SharedInfosService } from '../../service/shared-infos.service';
 
- 
+
 @Injectable({
   providedIn: 'root'
 })
 export class WalletCryptoService {
-  private serverUrl = `http://localhost:8222/api/v1/users`;
+  private serverUrl = `https://gateway-tyir.onrender.com/api/v1/users`;
 
 
   constructor(private httpClient: HttpClient, private cookieService: CookieService,private sharedInfosService: SharedInfosService) {}
@@ -67,7 +67,7 @@ export class WalletCryptoService {
 
   // Get All Transactions for a User
   getUserTransaction(userId: string): Observable<TransactionCrypto[]> {
-    const url = `${this.serverUrl}/allTransCrypro/${userId}`;   
+    const url = `${this.serverUrl}/allTransCrypro/${userId}`;
     const headers = this.sharedInfosService.getAuthHeaders();
     console.log('Headers:', headers.get('Authorization'));
     return this.httpClient.get<TransactionCrypto[]>(url,{ headers });
