@@ -12,7 +12,7 @@ import { SharedInfosService } from '../../service/shared-infos.service';
   providedIn: 'root'
 })
 export class WalletCryptoService {
-  private serverUrl = `https://gateway-tyir.onrender.com/api/v1/users`;
+  private serverUrl = `https://bankatii-gateway-crypto.onrender.com/api/v1/users`;
 
 
   constructor(private httpClient: HttpClient, private cookieService: CookieService,private sharedInfosService: SharedInfosService) {}

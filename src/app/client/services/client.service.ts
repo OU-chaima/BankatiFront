@@ -18,7 +18,7 @@ import {DepenseRequest} from "../../models/DepenseRequest";
 })
 export class ClientService {
 
-  private serverUrl: string = `https://gateway-tyir.onrender.com/api/v1/users`;
+  private serverUrl: string = `https://bankatii-gateway-crypto.onrender.com/api/v1/users`;
   private authorization = this.cookieService.get('Authorization');
 
   constructor(private httpClient: HttpClient, private cookieService: CookieService,private sharedInfosService: SharedInfosService) { }

@@ -16,7 +16,7 @@ import {Subscription} from "../../models/Subscription";
   providedIn: 'root'
 })
 export class TransactionServiceService {
-  private serverUrl: string =  `https://gateway-tyir.onrender.com/api/v1/users`;
+  private serverUrl: string =  `https://bankatii-gateway-crypto.onrender.com/api/v1/users`;
 
   constructor(private httpClient: HttpClient, private cookieService: CookieService,private sharedInfosService: SharedInfosService) { }
 

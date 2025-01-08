@@ -11,7 +11,7 @@ import {SharedInfosService} from "../../service/shared-infos.service";
 })
 export class VirtualCardService {
 
-  private apiUrl = 'https://gateway-tyir.onrender.com/api/v1/users';
+  private apiUrl = 'https://bankatii-gateway-crypto.onrender.com/api/v1/users';
 
   constructor(private http: HttpClient,private sharedInfosService: SharedInfosService) { }
 
